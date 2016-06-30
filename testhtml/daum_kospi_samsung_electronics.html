@@ -1,0 +1,567 @@
+
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<title>Daum 금융</title>
+<meta name="verify-v1" content="iXgHW7UooMcyeiV/Zb0Tk/yK2yB+IuA5/5GgIzGBEns=" >
+<meta property="og:image" content="http://i1.daumcdn.net/img-media/mobile/meta/finance.png"/>
+<link rel="stylesheet" href="/css/common.css?ver=" type="text/css">
+<link rel="stylesheet" href="/css/newHeader.css?ver=" type="text/css">
+<link rel="stylesheet" href="/css/column.css?ver=" type="text/css">
+<link rel="stylesheet" href="http://s1.daumcdn.net/stock/css/search.css?ver=" type="text/css">
+<style type="text/css">
+	#tabSubMenu a {	background-image:url(http://i1.daumcdn.net/fn/image/finance/plaza/2010/stock/relation/sub_tit01_02.gif); }
+	#tabS1 {background-position:0 0;width:62px}
+	#tabS1.on {background-position:0 -25px}
+	#tabS2 {background-position:-62px 0;width:54px}
+	#tabS2.on {background-position:-62px -25px}
+	#tabS3 {background-position:-116px 0;width:54px}
+	#tabS3.on {background-position:-116px -25px}
+	#tabS4 {background-position:-170px 0;width:93px}
+	#tabS4.on {background-position:-170px -25px}	
+	#tabS5 {background-position:-263px 0;width:43px}
+	#tabS5.on {background-position:-263px -25px}
+	
+
+	#contentWrap .tableline {margin:0px !important;border-color: #EEE;overflow:hidden;background-color: #FFF;}
+
+	#contentWrap h4 { background-image:url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/sub/hoga_tit.gif); height:21px;}
+
+	#bbsList td {padding-top:4px; padding-bottom: 4px;line-height:16px;}
+	#bbsList td.td_top2 { padding:0px;height:7px;}
+	#bbsList td.td_line {border-bottom:1px solid #F0F0F0;height:7px;}
+
+	#contentWrap .leftDiv .gHead { margin-bottom:30px;}
+	#contentWrap .rightDiv .gHead { margin-bottom:30px;}
+
+	.gHead {margin-top:1px;}
+	.gHead .time { text-indent: 10px; text-align:left;}
+	#contentWrap .subPrice { margin-bottom:12px !important;}
+	.gHead th.p_r18 { padding-right:18px; }
+	.gHead th.p_r15 { padding-right:15px; }
+	.gHead .left { text-indent: 10px;}
+	.gHead .tdTitleTxt { background-color: #F6F6F6; }
+	.gHead .tdTitleTxt2 { text-align:center; background-color: #F6F6F6; }
+	.gHead strong { letter-spacing: -1px;}
+	.gHead strong.lineGray {display:block;text-align:center;padding-bottom:4px;width:94px;margin-left:8px}
+	#price5Expect {padding-top:10px}
+	#price5Expect li {position:relative;height:21px}
+	#price5Expect li .txt {position:absolute;left:0;text-align:left;width:36px}
+	#price5Expect li .num {padding-right:0}
+	
+	.mColor .gColor {  background-color: #FBFBFB; }
+	.mColor .rColor3 { background-color: #F2F9FF;}
+	.mColor .bColor3 { background-color: #FEF0F0;}
+
+	.bdGray2 {border-right:1px solid #EAEAEA;} 
+	.bdLGray2 {border-left:1px solid #EAEAEA;} 
+	.bdTGray {border-top:1px solid #D9D9D9;}
+	.bdTGray2 {border-top:1px solid #EAEAEA !important;}
+	
+
+	
+	.dSortImgBtn { width:12px; height:12px; background:  url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/common/sorting.gif) no-repeat; margin-top:0px;margin-left:4px;}
+
+	/* 5분 봉차트 */
+	.chart5ImgBtn { width:79px; height:21px; background:  url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/sub/5chart_btn.gif) no-repeat; float:left;}
+
+	/* 일 봉차트 */
+	.chart24ImgBtn { width:73px; height:21px; background:  url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/sub/daychart_btn.gif) no-repeat; float:left;}
+
+	#priceTabDiv { position:relative;}
+	
+	#priceTabDiv .last_time { z-index:21; display:block; position:absolute; left:auto; right:0; width: 100px; margin:0; padding:0; text-align: right; line-height:14px; height: 14px; }
+	#priceTabDiv .help_btn { background:url("http://i1.daumcdn.net/fn/image/finance/plaza/2011/common/ico_realtime.gif"); text-indent:-9999em; margin-left:5px;  width: 15px; height: 14px; border: none; float:right; }
+	
+	#priceTabDiv .help_layer { 
+		z-index:21; position:absolute; background: #fff;
+		left:auto; right:0px; top: 14px;
+		font:11px AppleGothic,"돋움",dotum,sans-serif; letter-spacing: -1px; text-indent: -7px; line-height: 16px;
+		padding: 8px 10px 6px 17px; border: 1px solid #7c7c7c;
+	}
+	#priceTabDiv .help_layer .dot_mark { margin-right: 3px; }
+	
+	#priceTabDiv h5 {background-image:url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/sub/hoga_tit.gif);background-repeat:no-repeat;text-indent:-1000em;width:70px;height:21px;position:absolute;top:0;text-indent:-1000em;cursor:pointer;z-index:20;margin-left:10px;}
+	#priceTabDiv h5.on {cursor:default}
+		#price5StepTab {background-position:0 -100px;left:0;}
+		#price5StepTab.on {background-position:0 -75px;}
+		#price10StepTab {background-position:-69px -75px;left:69px;width:79px !important;}
+		#price10StepTab.on {background-position:-69px -100px;}
+	#priceTabDiv div {display:none;position:relative;top:0;left:0;padding-top:21px;z-index:10}
+	#priceTabDiv div.on {display:block}
+	
+	#quoteYMDTit, #quoteHMTit {margin-top:3px;width:75px !important;}
+	.moreD {text-indent:-1000em;color:#777;letter-spacing:-1px;background:url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/common/more_b.gif) no-repeat 3px 2px;width:37px;height:15px;float:right;margin-top:3px;overflow:hidden}
+	
+	#wrap {position:relative}
+	
+	.clockAfter {background: url(http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/global/clock_icon.gif) no-repeat right top;width:11px;height:11px;display:block;float:left;margin-top:7px;margin-right:3px;}
+	* html .clockAfter {margin-top:6px;margin-right:0px;}
+	
+	#reloadDelayDiv {position:relative;margin-top:-50px;float:right;color:#666;height:22px;overflow:hidden;line-height:18px;display:none;font:11px dotum;}
+	#reloadDelayDiv.on {display:block;}
+	#reloadDelay {width:93px;height:22px;margin-bottom:3px;margin-left:2px;}
+
+	
+	/* 이평선 */
+	#stockAvgSet {float:right;margin:3px 0px 6px 0px;}
+	.avgDate {display:inline-block;overflow:hidden;float:left;width:47px;font:bold 12px/14px gulim;text-align:center;}
+	.avgInfoTxt {display:inline-block;overflow:hidden;float:left;width:74px;text-indent:5px;line-height:15px;}
+	.icoAvgAlert {display:inline-block;overflow:hidden;float:left;width:24px;height:14px;margin-left:8px;text-indent:-1000em;vertical-align:2px;background: url("http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/i_01.gif") no-repeat left top;}
+	.icoAvgSearch {display:inline-block;overflow:hidden;float:left;width:24px;height:14px;margin-left:8px;text-indent:-1000em;vertical-align:2px;background: url("http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/i_011.gif") no-repeat left top;}
+
+	
+	/* 현재가 일자별, 이평선 */
+	#quoteSubMenu {display:inline;overflow:hidden;float:left;width:140px;height:21px;margin:0px 12px 3px 10px;background: url("http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/Tit_contents03.gif") no-repeat 0px -322px; }
+	#quoteSubMenu a {display:block;overflow;hidden;float:left;height:21px;text-indent:-1000em;background-image: url("http://i1.daumcdn.net/fn/image/finance/plaza/2008/stock/quote/Tit_contents03.gif");background-repeat:no-repeat; }
+	
+	#menuDayPrice {width:69px;background-position:0px -348px;}
+	#menuDayPrice.on {background-position:0px -322px;}
+	#menuAvgPrice {width:70px;margin-left:1px;background-position:-70px -322px;}
+	#menuAvgPrice.on {background-position:-70px -348px;}
+	
+	#quoteSubMenu #btnModified {width:93px;height:21px;margin:0 0 0 -1px;background:#fff url(http://i1.daumcdn.net/fn/image/finance/plaza/2010/s_img/btn_chart1.gif) no-repeat 0 -35px;;text-indent:-9999em;}
+	#quoteSubMenu #btnModified.off {background-position:0 0;}
+	#quoteSubMenu #btnModified input {display:none;}
+	#quoteSubMenu .vbar {display:inilne;float:left;height:14px;margin-top:5px;margin-left:10px;//margin-top:4px;font:11px/12px dotum;color:#d7d8e1;}
+</style>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/img.search/front/js/searchContents.js?ver=" charset="utf-8"></script>
+<script type="text/javascript" src="http://feature.daum.net/json/2.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+document.domain = "daum.net"
+var highlight = top.highlight;
+function goPage(page) {
+	if(document._form) {
+    	var param = "?page="+page;
+    	if(document._form.code) param += "&code="+document._form.code.value;
+    	if(document._form.stype) param += "&stype="+document._form.stype.value;
+		if(document._form.seccode) param += "&seccode="+document._form.seccode.value;
+		if(document._form.themecd) param += "&themecd="+document._form.themecd.value;
+		if(document._form.groupcd) param += "&groupcd="+document._form.groupcd.value;
+		if(document._form.type) param += "&type="+document._form.type.value;
+		if(document._form.option) param += "&option="+document._form.option.value;
+		if(document._form.modify) param += "&modify="+document._form.modify.value;
+		document.location.href = param;
+	}
+}
+</script>
+<style type="text/css">
+	#wrap {width:auto}
+	.listPaging {margin-bottom:0}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+
+<form name="_form">
+	<input name="page" value="1" type="hidden" />
+ <input name="code" value="005930" type="hidden" />
+ <input name="modify" value="null" type="hidden" />
+ 
+</form>
+<div id="contentWrap">
+	
+	<div id="quoteSubMenu">
+		<a href="javascript:parent.viewAvg('N');" id="menuDayPrice" class="on" title="일자별주가">일자별 주가</a>
+		        	<style type="text/css">#quoteSubMenu {width:250px;margin-right:0;}</style>
+							<a href="/item/quote_yyyymmdd_sub.daum?code=005930&stype=1&yyyymmdd=20160629&seqno=5930003&btime=1500&modify=1" id="btnModified" class="off"><input type="checkbox" name="cchAP" id="cchAP"></a>
+						<span class="vbar">|</span>
+				<a href="javascript:parent.viewAvg('Y');" id="menuAvgPrice" class="" title="이동평균선">이동평균선</a>
+	</div>
+	<input type="button" value="일봉차트" class="typeBtn chart24ImgBtn" onclick="top.location.href='/item/chart.daum?code=005930'"/>
+
+	<table id="bbsList" class="gHead clr subPrice">
+		<tr>
+			<th width="54">일자</th>
+			<th width="65" class="right p_r18">시가</th>
+			<th width="80"  class="right p_r18">고가</th>
+			<th width="80"  class="right p_r18">저가</th>
+			<th width="80"  class="right p_r18">종가</th>
+			<th width="83" class="right p_r15">전일비</th>
+			<th width="78"  class="right p_r15">등락률</th>
+			<th width="67" class="right p_r18">거래량</th>
+		</tr>
+			<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.29</td>
+				<td class="num">1,408,000</td>
+				<td class="num">1,412,000</td>
+				<td class="num">1,391,000</td>
+				<td class="num">1,396,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>3,000</span></td>
+				<td class="num cDn">-0.21% </td>
+				<td class="num">208,165</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.28</td>
+				<td class="num">1,390,000</td>
+				<td class="num">1,404,000</td>
+				<td class="num">1,379,000</td>
+				<td class="num">1,399,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>1,000</span></td>
+				<td class="num cUp">+0.07% </td>
+				<td class="num">214,379</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.27</td>
+				<td class="num">1,400,000</td>
+				<td class="num">1,405,000</td>
+				<td class="num">1,385,000</td>
+				<td class="num">1,398,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>2,000</span></td>
+				<td class="num cDn">-0.14% </td>
+				<td class="num">236,780</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.24</td>
+				<td class="num">1,445,000</td>
+				<td class="num">1,445,000</td>
+				<td class="num">1,360,000</td>
+				<td class="num">1,400,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>30,000</span></td>
+				<td class="num cDn">-2.10% </td>
+				<td class="num">411,052</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.23</td>
+				<td class="num">1,444,000</td>
+				<td class="num">1,445,000</td>
+				<td class="num">1,427,000</td>
+				<td class="num">1,430,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>15,000</span></td>
+				<td class="num cDn">-1.04% </td>
+				<td class="num">225,126</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+				<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.22</td>
+				<td class="num">1,446,000</td>
+				<td class="num">1,450,000</td>
+				<td class="num">1,431,000</td>
+				<td class="num">1,445,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>3,000</span></td>
+				<td class="num cDn">-0.21% </td>
+				<td class="num">178,965</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.21</td>
+				<td class="num">1,432,000</td>
+				<td class="num">1,449,000</td>
+				<td class="num">1,426,000</td>
+				<td class="num">1,448,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>17,000</span></td>
+				<td class="num cUp">+1.19% </td>
+				<td class="num">200,411</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.20</td>
+				<td class="num">1,427,000</td>
+				<td class="num">1,448,000</td>
+				<td class="num">1,426,000</td>
+				<td class="num">1,431,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>5,000</span></td>
+				<td class="num cUp">+0.35% </td>
+				<td class="num">270,316</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.17</td>
+				<td class="num">1,410,000</td>
+				<td class="num">1,435,000</td>
+				<td class="num">1,410,000</td>
+				<td class="num">1,426,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>17,000</span></td>
+				<td class="num cUp">+1.21% </td>
+				<td class="num">328,394</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.16</td>
+				<td class="num">1,413,000</td>
+				<td class="num">1,417,000</td>
+				<td class="num">1,395,000</td>
+				<td class="num">1,409,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>4,000</span></td>
+				<td class="num cDn">-0.28% </td>
+				<td class="num">292,431</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+				<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.15</td>
+				<td class="num">1,385,000</td>
+				<td class="num">1,416,000</td>
+				<td class="num">1,383,000</td>
+				<td class="num">1,413,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>33,000</span></td>
+				<td class="num cUp">+2.39% </td>
+				<td class="num">306,689</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.14</td>
+				<td class="num">1,371,000</td>
+				<td class="num">1,386,000</td>
+				<td class="num">1,369,000</td>
+				<td class="num">1,380,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>9,000</span></td>
+				<td class="num cUp">+0.66% </td>
+				<td class="num">245,461</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.13</td>
+				<td class="num">1,396,000</td>
+				<td class="num">1,396,000</td>
+				<td class="num">1,362,000</td>
+				<td class="num">1,371,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>35,000</span></td>
+				<td class="num cDn">-2.49% </td>
+				<td class="num">304,966</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.10</td>
+				<td class="num">1,424,000</td>
+				<td class="num">1,425,000</td>
+				<td class="num">1,404,000</td>
+				<td class="num">1,406,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>24,000</span></td>
+				<td class="num cDn">-1.68% </td>
+				<td class="num">289,681</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.09</td>
+				<td class="num">1,408,000</td>
+				<td class="num">1,430,000</td>
+				<td class="num">1,406,000</td>
+				<td class="num">1,430,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>24,000</span></td>
+				<td class="num cUp">+1.71% </td>
+				<td class="num">515,375</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+				<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.08</td>
+				<td class="num">1,419,000</td>
+				<td class="num">1,419,000</td>
+				<td class="num">1,389,000</td>
+				<td class="num">1,406,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>8,000</span></td>
+				<td class="num cUp">+0.57% </td>
+				<td class="num">376,162</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.07</td>
+				<td class="num">1,386,000</td>
+				<td class="num">1,402,000</td>
+				<td class="num">1,380,000</td>
+				<td class="num">1,398,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>21,000</span></td>
+				<td class="num cUp">+1.53% </td>
+				<td class="num">462,843</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.03</td>
+				<td class="num">1,370,000</td>
+				<td class="num">1,379,000</td>
+				<td class="num">1,364,000</td>
+				<td class="num">1,377,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>12,000</span></td>
+				<td class="num cUp">+0.88% </td>
+				<td class="num">341,324</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.02</td>
+				<td class="num">1,350,000</td>
+				<td class="num">1,372,000</td>
+				<td class="num">1,346,000</td>
+				<td class="num">1,365,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>32,000</span></td>
+				<td class="num cUp">+2.40% </td>
+				<td class="num">476,139</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.06.01</td>
+				<td class="num">1,298,000</td>
+				<td class="num">1,341,000</td>
+				<td class="num">1,295,000</td>
+				<td class="num">1,333,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>41,000</span></td>
+				<td class="num cUp">+3.17% </td>
+				<td class="num">470,080</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+				<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.31</td>
+				<td class="num">1,280,000</td>
+				<td class="num">1,300,000</td>
+				<td class="num">1,268,000</td>
+				<td class="num">1,292,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>12,000</span></td>
+				<td class="num cUp">+0.94% </td>
+				<td class="num">1,250,554</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.30</td>
+				<td class="num">1,297,000</td>
+				<td class="num">1,297,000</td>
+				<td class="num">1,274,000</td>
+				<td class="num">1,280,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>2,000</span></td>
+				<td class="num cDn">-0.16% </td>
+				<td class="num">206,307</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.27</td>
+				<td class="num">1,300,000</td>
+				<td class="num">1,301,000</td>
+				<td class="num">1,273,000</td>
+				<td class="num">1,282,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>14,000</span></td>
+				<td class="num cDn">-1.08% </td>
+				<td class="num">274,891</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.26</td>
+				<td class="num">1,299,000</td>
+				<td class="num">1,303,000</td>
+				<td class="num">1,295,000</td>
+				<td class="num">1,296,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>1,000</span></td>
+				<td class="num cUp">+0.08% </td>
+				<td class="num">253,073</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.25</td>
+				<td class="num">1,283,000</td>
+				<td class="num">1,298,000</td>
+				<td class="num">1,274,000</td>
+				<td class="num">1,295,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>24,000</span></td>
+				<td class="num cUp">+1.89% </td>
+				<td class="num">237,255</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+				<tr>
+			<td colspan="8" class="td_top2"></td>
+		</tr>	
+						<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.24</td>
+				<td class="num">1,286,000</td>
+				<td class="num">1,289,000</td>
+				<td class="num">1,268,000</td>
+				<td class="num">1,271,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>15,000</span></td>
+				<td class="num cDn">-1.17% </td>
+				<td class="num">208,692</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.23</td>
+				<td class="num">1,269,000</td>
+				<td class="num">1,286,000</td>
+				<td class="num">1,269,000</td>
+				<td class="num">1,286,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>17,000</span></td>
+				<td class="num cUp">+1.34% </td>
+				<td class="num">162,251</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.20</td>
+				<td class="num">1,270,000</td>
+				<td class="num">1,280,000</td>
+				<td class="num">1,269,000</td>
+				<td class="num">1,269,000</td>
+				<td class="num"><span class="stDn"><em>▼</em>1,000</span></td>
+				<td class="num cDn">-0.08% </td>
+				<td class="num">159,211</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.19</td>
+				<td class="num">1,268,000</td>
+				<td class="num">1,277,000</td>
+				<td class="num">1,266,000</td>
+				<td class="num">1,270,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>2,000</span></td>
+				<td class="num cUp">+0.16% </td>
+				<td class="num">200,249</td>
+			</tr>		
+									<tr onmouseout="highlight(this,false)" onmouseover="highlight(this,true)">
+				<td class="datetime2">16.05.18</td>
+				<td class="num">1,264,000</td>
+				<td class="num">1,271,000</td>
+				<td class="num">1,255,000</td>
+				<td class="num">1,268,000</td>
+				<td class="num"><span class="stUp"><em>▲</em>4,000</span></td>
+				<td class="num cUp">+0.32% </td>
+				<td class="num">183,392</td>
+			</tr>		
+					<tr>
+			<td colspan="8" class="td_line"></td>
+		</tr>
+	 	</table>
+
+	<div class="listPaging">
+		<table class="pagingTable" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td>
+<span class="on"><b>1</b></span><span><a href="javascript:goPage('2');">2</a></span><span><a href="javascript:goPage('3');">3</a></span><span><a href="javascript:goPage('4');">4</a></span><span><a href="javascript:goPage('5');">5</a></span><span><a href="javascript:goPage('6');">6</a></span><span><a href="javascript:goPage('7');">7</a></span><span><a href="javascript:goPage('8');">8</a></span><span><a href="javascript:goPage('9');">9</a></span><span><a href="javascript:goPage('10');">10</a></span> <span class="jumpNext"><a href="javascript:goPage('11')">11~20</a></span><br class="clr" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script charset='utf-8' type='text/javascript' src='http://static.daum-img.net/tiara/tracker/tiara.js'></script>
+<script type='text/javascript'>
+	if(parent.isTiara){
+	    var __pageTracker = {};
+	
+	    if (typeof __Tiara != 'undefined' && typeof __Tiara.__getTracker != 'undefined') {
+	        __pageTracker = __Tiara.__getTracker();
+	    } else {
+	        __pageTracker.__trackPageview = function() {};
+	    }
+    	window.setTimeout('try { __pageTracker.__trackPageview(); } catch(e) {}', 1);
+    }
+</script></div>
+	
+</body>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-46808903-7', {'sampleRate': 5});
+    ga('send', 'pageview', {
+        'dimension1': '$_stockinfo.login'
+    });
+
+</script>
+</html>

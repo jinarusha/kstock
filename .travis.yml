@@ -1,0 +1,16 @@
+language: go
+go:
+  - 1.6
+  - tip
+install:
+  - go get github.com/smartystreets/goconvey/convey
+  - go get github.com/jarcoal/httpmock
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/modocache/gover
+  - go get github.com/mattn/goveralls
+script:
+  - go test -v -coverprofile=kstock.coverprofile
+  - $HOME/gopath/bin/gover
+  - $HOME/gopath/bin/goveralls -coverprofile=gover.coverprofile -service=travis-ci
+after_success:
+  - GOPATH=`pwd`:$GOPATH $HOME/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci
