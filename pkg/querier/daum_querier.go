@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	daumStockListPageUrlFormat string = "https://finance.daum.net/api/quotes/sectors?fieldName=&order=&perPage=&market=%s&page=&changes=UPPER_LIMIT%2CRISE%2CEVEN%2CFALL%2CLOWER_LIMIT"
+	daumStockListPageUrlFormat string = "https://finance.daum.net/api/quotes/sectors?fieldName=&order=&perPage=&market=%s&page="
 	daumQuoteURLFormat         string = "https://finance.daum.net/api/quote/%s/days?symbolCode=%s&page=%d&perPage=%d&pagination=true"
 	daumStockDetailPerPage            = 40
 
