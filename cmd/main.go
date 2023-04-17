@@ -7,6 +7,10 @@ import (
 
 func main() {
 	querier := stockQuerier.DaumQuerier{}
-	quotes, err := querier.GetQuotes("A217270", 1)
+
+	perPage := 10
+	page := 1
+
+	quotes, err := querier.GetQuotes("A217270", perPage, page)
 	fmt.Println(quotes, err)
 }

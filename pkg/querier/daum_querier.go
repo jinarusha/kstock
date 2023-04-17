@@ -13,7 +13,6 @@ import (
 const (
 	daumStockListPageUrlFormat string = "https://finance.daum.net/api/quotes/sectors?fieldName=&order=&perPage=&market=%s&page="
 	daumQuoteURLFormat         string = "https://finance.daum.net/api/quote/%s/days?symbolCode=%s&page=%d&perPage=%d&pagination=true"
-	daumStockDetailPerPage            = 40
 
 	quoteDateFormat = "2006-01-02"
 )
@@ -89,14 +88,18 @@ type daumPaginatedQuoteResp struct {
 	} `json:"data"`
 }
 
-func (q *DaumQuerier) GetQuotes(symbolCode string, page int) ([]entity.Quote, error) {
+func (q *DaumQuerier) GetQuotes(symbolCode string, perPage, page int) ([]entity.Quote, error) {
+	if perPage < 0 || page < 1 {
+		return []entity.Quote{}, nil
+	}
+
 	headers := http.Header{}
 	headers.Set("authority", "finance.daum.net")
 	headers.Set("accept", "application/json")
 	headers.Set("referer", "https://finance.daum.net/quotes/"+symbolCode)
 	headers.Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36")
 
-	url := fmt.Sprintf(daumQuoteURLFormat, symbolCode, symbolCode, page, daumStockDetailPerPage)
+	url := fmt.Sprintf(daumQuoteURLFormat, symbolCode, symbolCode, page, perPage)
 	resp, err := httpclient.GetClient().Get(url, headers)
 	if err != nil {
 		return nil, err
