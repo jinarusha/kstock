@@ -89,7 +89,7 @@ type daumPaginatedQuoteResp struct {
 }
 
 func (q *DaumQuerier) GetQuotes(symbolCode string, perPage, page int) ([]entity.Quote, error) {
-	if perPage < 0 || page < 1 {
+	if perPage < 0 || page < 0 {
 		return []entity.Quote{}, nil
 	}
 
